@@ -31,8 +31,9 @@
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*"/>
                     <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
-                <TextBlock Text="CJ:" Grid.Column="0" Grid.Row="0" Margin="3"/>
+                <CheckBox Name="CheckBox_OutputCJ" Content="CJ:" IsChecked="False" Grid.Column="0" Grid.Row="0" Margin="3"/>
                 <TextBox Name="TextBox_CjPrefixBeforeIndex" Grid.Column="1" Grid.Row="0" Margin="3" TextChanged="Common_TextChanged"/>
                 <CheckBox Name="CheckBox_CjPrefixIndex" IsChecked="False" Grid.Column="2" Grid.Row="0" Margin="3" Content="Index" Checked="Common_TextChanged" Unchecked="Common_TextChanged"/>
                 <TextBox Name="TextBox_CjPrefixAfterIndex" Grid.Column="3" Grid.Row="0" Margin="3" TextChanged="Common_TextChanged"/>
@@ -40,14 +41,16 @@
                 <TextBox Name="TextBox_CjSuffixBeforeIndex" Grid.Column="5" Grid.Row="0" Margin="3" TextChanged="Common_TextChanged"/>
                 <CheckBox Name="CheckBox_CjSuffixIndex" IsChecked="False" Grid.Column="6" Grid.Row="0" Margin="3" Content="Index" Checked="Common_TextChanged" Unchecked="Common_TextChanged"/>
                 <TextBox Name="TextBox_CjSuffixAfterIndex" Grid.Column="7" Grid.Row="0" Margin="3" TextChanged="Common_TextChanged"/>
-                <TextBlock Text="BJ:" Grid.Column="0" Grid.Row="1" Margin="3"/>
-                <TextBox Name="TextBox_BjPrefixBeforeIndex" Grid.Column="1" Grid.Row="1" Margin="3" TextChanged="Common_TextChanged"/>
-                <CheckBox Name="CheckBox_BjPrefixIndex" IsChecked="False" Grid.Column="2" Grid.Row="1" Margin="3" Content="Index" Checked="Common_TextChanged" Unchecked="Common_TextChanged"/>
-                <TextBox Name="TextBox_BjPrefixAfterIndex" Grid.Column="3" Grid.Row="1" Margin="3" TextChanged="Common_TextChanged"/>
-                <TextBlock Text="函数名" Grid.Column="4" Grid.Row="1" Margin="3"/>
-                <TextBox Name="TextBox_BjSuffixBeforeIndex" Grid.Column="5" Grid.Row="1" Margin="3" TextChanged="Common_TextChanged"/>
-                <CheckBox Name="CheckBox_BjSuffixIndex" IsChecked="False" Grid.Column="6" Grid.Row="1" Margin="3" Content="Index" Checked="Common_TextChanged" Unchecked="Common_TextChanged"/>
-                <TextBox Name="TextBox_BjSuffixAfterIndex" Grid.Column="7" Grid.Row="1" Margin="3" TextChanged="Common_TextChanged"/>
+                <CheckBox Name="CheckBox_Separator" Content="SP:" IsChecked="False"  Grid.Column="0" Grid.Row="1" Margin="3"/>
+                <TextBox Name="TextBox_Separator" Grid.Column="1" Grid.ColumnSpan="6" Grid.Row="1" Margin="3"/>
+                <CheckBox Name="CheckBox_OutputBJ" Content="BJ:" IsChecked="False"  Grid.Column="0" Grid.Row="2" Margin="3"/>
+                <TextBox Name="TextBox_BjPrefixBeforeIndex" Grid.Column="1" Grid.Row="2" Margin="3" TextChanged="Common_TextChanged"/>
+                <CheckBox Name="CheckBox_BjPrefixIndex" IsChecked="False" Grid.Column="2" Grid.Row="2" Margin="3" Content="Index" Checked="Common_TextChanged" Unchecked="Common_TextChanged"/>
+                <TextBox Name="TextBox_BjPrefixAfterIndex" Grid.Column="3" Grid.Row="2" Margin="3" TextChanged="Common_TextChanged"/>
+                <TextBlock Text="函数名" Grid.Column="4" Grid.Row="2" Margin="3"/>
+                <TextBox Name="TextBox_BjSuffixBeforeIndex" Grid.Column="5" Grid.Row="2" Margin="3" TextChanged="Common_TextChanged"/>
+                <CheckBox Name="CheckBox_BjSuffixIndex" IsChecked="False" Grid.Column="6" Grid.Row="2" Margin="3" Content="Index" Checked="Common_TextChanged" Unchecked="Common_TextChanged"/>
+                <TextBox Name="TextBox_BjSuffixAfterIndex" Grid.Column="7" Grid.Row="2" Margin="3" TextChanged="Common_TextChanged"/>
             </Grid>
         </GroupBox>
         <GroupBox Header="函数名列表" Grid.Row="2" Margin="3">

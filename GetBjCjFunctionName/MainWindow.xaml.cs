@@ -31,31 +31,42 @@ namespace GetBjCjFunctionName
         private void Common_TextChanged(object sender, EventArgs e)
         {
             TextEditor_FuncList.Text = null;
-            MatchCollection matchs = RegexCJ.Matches(TextEditor_BjCj.Text);
+            MatchCollection matchs;
             int index = 0;
-            foreach (Match select in matchs)
+            if (CheckBox_OutputCJ.IsChecked == true)
             {
-                index++;
-                TextEditor_FuncList.Text += 
-                    TextBox_CjPrefixBeforeIndex.Text + 
-                    (CheckBox_CjPrefixIndex.IsChecked == true? index.ToString() :"") + 
-                    TextBox_CjPrefixAfterIndex.Text + 
-                    select.Value + 
-                    TextBox_CjSuffixBeforeIndex.Text + 
-                    (CheckBox_CjSuffixIndex.IsChecked == true ? index.ToString() : "") +
-                    TextBox_CjSuffixAfterIndex.Text + "\n";
+                matchs = RegexCJ.Matches(TextEditor_BjCj.Text);
+                foreach (Match select in matchs)
+                {
+                    index++;
+                    TextEditor_FuncList.Text +=
+                        TextBox_CjPrefixBeforeIndex.Text +
+                        (CheckBox_CjPrefixIndex.IsChecked == true ? index.ToString() : "") +
+                        TextBox_CjPrefixAfterIndex.Text +
+                        select.Value +
+                        TextBox_CjSuffixBeforeIndex.Text +
+                        (CheckBox_CjSuffixIndex.IsChecked == true ? index.ToString() : "") +
+                        TextBox_CjSuffixAfterIndex.Text + "\n";
+                }
             }
-            matchs = RegexBJ.Matches(TextEditor_BjCj.Text);
-            foreach (Match select in matchs)
+            if (CheckBox_Separator.IsChecked == true)
             {
-                TextEditor_FuncList.Text +=
-                    TextBox_BjPrefixBeforeIndex.Text +
-                    (CheckBox_BjPrefixIndex.IsChecked == true ? index.ToString() : "") +
-                    TextBox_BjPrefixAfterIndex.Text +
-                    select.Value +
-                    TextBox_BjSuffixBeforeIndex.Text +
-                    (CheckBox_BjSuffixIndex.IsChecked == true ? index.ToString() : "") +
-                    TextBox_BjSuffixAfterIndex.Text + "\n";
+                TextEditor_FuncList.Text += TextBox_Separator.Text + "\n";
+            }
+                if (CheckBox_OutputBJ.IsChecked == true)
+            {
+                matchs = RegexBJ.Matches(TextEditor_BjCj.Text);
+                foreach (Match select in matchs)
+                {
+                    TextEditor_FuncList.Text +=
+                        TextBox_BjPrefixBeforeIndex.Text +
+                        (CheckBox_BjPrefixIndex.IsChecked == true ? index.ToString() : "") +
+                        TextBox_BjPrefixAfterIndex.Text +
+                        select.Value +
+                        TextBox_BjSuffixBeforeIndex.Text +
+                        (CheckBox_BjSuffixIndex.IsChecked == true ? index.ToString() : "") +
+                        TextBox_BjSuffixAfterIndex.Text + "\n";
+                }
             }
         }
     }
